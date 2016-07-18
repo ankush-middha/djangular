@@ -1,0 +1,16 @@
+<div>
+    <h2>Profile Details </h2>
+
+    <div id="profileList" class="profileAvtar">
+        username : {{userInfo.username}} <br>
+        email : {{userInfo.email}} <br>
+        contact number {{userInfo.contact_no}} <br>
+        <div>
+            profile pic:
+            <a class="item item-avatar">
+                <img id="file" class="profilePic" ngf-select = 'imgPopup($file)' ng-model='file'  ng-src="{{profile_pic}}">
+            </a> <br>
+        </div>
+
+    </div>
+</div>

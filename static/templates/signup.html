@@ -1,0 +1,18 @@
+
+<h2>Sign UP </h2>
+<div>
+    <div>
+        <form name='signupForm'>
+            Email: <input type='email' name = 'email' ng-model='email' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required />
+            <br/><br/>
+                <span ng-show="signupForm.email.$invalid">email is not valid.</span> <br/>
+
+            Password: <input type='password' name="password" ng-model='pass' required />
+            <i ng-show="signupForm.password.$error.required">*required</i><br>
+            <div class="center">
+                <button style="padding: 0px 30px; border-radius: 25px;" ng-disabled="signupForm.$invalid" ng-click="signUp()">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
+

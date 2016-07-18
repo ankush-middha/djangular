@@ -1,0 +1,24 @@
+<html ng-app="myApp">
+    <head>
+        <script type="text/javascript" src="/static/js/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+        <title> Djangular </title>
+    </head>
+    <body>
+    Welcome Page
+        <!--{% verbatim %}-->
+                <!--{{ 5 + 5 }}-->
+        <!--{% endverbatim %}-->
+        <div>
+             <center>
+                 <a href="#/login">Login</a>       Or
+                 <a href="#/signup">signup </a>
+             </center>
+
+        </div>
+        <div ng-view></div>
+
+        <script type="text/javascript" src="/static/js/app.js"></script>
+    </body>
+
+</html>

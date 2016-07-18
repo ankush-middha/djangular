@@ -1,0 +1,58 @@
+<html ng-app="myApp">
+<head>
+    <!-- Note: MUST BE PLACED BEFORE angular.js-->
+    <script type="text/javascript" src="/static/js/angular-file-upload-shim.min.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"> </script>
+    <script type="text/javascript" src="/static/js/angular-file-upload.min.js" />
+
+    <script type="text/javascript" src="/static/js/app.js" />
+
+    <link rel="stylesheet" type="text/css" src="bootstrap-3.3.6-dist/css/bootstrap.min.css" />
+
+</head>
+<body >
+<h2>Login </h2>
+<div ng-controller='LoginController as loginctrl'>
+
+    <div ng-hide ='success'>
+        <form name='loginForm'>
+            Email: <input type='email' name = 'email' ng-model='email' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required />
+            <br/><br/>
+                <span ng-show="loginForm.email.$invalid">email is not valid.</span> <br/>
+
+            Password: <input type='password' name="password" ng-model='pass' required />
+            <i ng-show="loginForm.password.$error.required">*required</i><br>
+            <div class="center">
+                <button style="padding: 0px 30px; border-radius: 25px;" ng-disabled="loginForm.$invalid" ng-click="login()">Login</button>
+            </div>
+        </form>
+    </div>
+
+    <!--show details here-->
+    <div ng-show="success">
+        <h2>Profile Details </h2>
+        <br>
+        <div id="profileList" class="profileAvtar">
+            username : {{username}} <br>
+            email : {{email}} <br>
+            contact number {{contact_no}} <br>
+            <div>
+                profile pic:
+                <a class="item item-avatar">
+                    <img id="file" class="profilePic" ngf-select = 'imgPopup($file)' ng-model='file'  ng-src="{{profile_pic}}">
+                </a> <br>
+                <!--Edit :<input type="file" id='file'>-->
+                <!--<button ng-click="imgPopup()">submit</button>-->
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
